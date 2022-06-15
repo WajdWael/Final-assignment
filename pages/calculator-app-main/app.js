@@ -66,8 +66,8 @@ keys.addEventListener('click', event => {
 
 function calculate(firstNumber, operator, secondNumber) {
     let computation
-    firstNumber = parseFloat(firstNumber).toFixed(7)
-    secondNumber = parseFloat(secondNumber).toFixed(7)
+    firstNumber = parseFloat(firstNumber)
+    secondNumber = parseFloat(secondNumber)
 
     if (isNaN(firstNumber) || isNaN(secondNumber)) {
         document.querySelector('.error').classList.add("show-error")
@@ -92,7 +92,7 @@ function calculate(firstNumber, operator, secondNumber) {
         default:
             return
     }
-    return computation
+    return computation.toFixed(7)
 }
 
 document.onkeydown = function (event) {
@@ -108,7 +108,7 @@ document.onkeydown = function (event) {
 
     equation = equation.replace(/×/g, '*').replace(/÷/g, '/');
     if(key_press==1) {
-        input.innerText += key_press;
+        input.innerHTML += key_press;
     }
     if(key_press==2) {
         input.innerHTML += key_press; 
