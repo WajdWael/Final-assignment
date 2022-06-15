@@ -19,7 +19,7 @@ const calculator = document.querySelector('.calculator')
 const keys = calculator.querySelector('.calc__body-btn')
 const display = calculator.querySelector('.sc')
 const operatorKeys = keys.querySelectorAll('[data-type="operator"]')
-// 
+
 keys.addEventListener('click', event => {
     if (!event.target.closest('button')) return
     const key = event.target
@@ -36,14 +36,14 @@ keys.addEventListener('click', event => {
     }
 
     if (type === 'operator') {
+        if ((displayValue.includes("+")) || (displayValue.includes("-")) || (displayValue.includes("÷")) || (displayValue.includes("×"))) return;
         operatorKeys.forEach(el => { el.dataset.state = '' })
         calculator.dataset.firstNumber = displayValue
         calculator.dataset.operator = key.dataset.key
-        display.textContent += `${key.dataset.key}`
+        display.textContent += key.dataset.key
     }
 
     if (type === 'equal') {
-      // Perform a calculation
         const firstNumber = calculator.dataset.firstNumber
         const operator = calculator.dataset.operator
         const secondNumber = displayValue

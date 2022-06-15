@@ -1,82 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frontend Mentor | Calculator app</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
 
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
-</head>
-
-<body>
-  <div class="calc__container" data-theme="one">
-    <div class="bc">
-      <section class="top">
-        <div class="calc-header flex-center">
-          <h3 class="item-title calc__header-content">calc</h3>
-        </div>
-        <div class="compound-toggle">
-          <p class="item item-label">Theme</p>
-          <p class="item item-1">1</p>
-          <p class="item item-2">2</p>
-          <p class="item item-3">3</p>
-          <div class="wrapper">
-            <div class="toggle_radio">
-              <input type="radio" checked class="toggle_option" id="first_toggle" name="toggle_option">
-              <input type="radio" class="toggle_option" id="second_toggle" name="toggle_option">
-              <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
-              <label for="first_toggle">F</label>
-              <label for="second_toggle">S</label>
-              <label for="third_toggle">T</label>
-              <div class="toggle_option_slider">
+  <body>
+    <div class="calc__container" data-theme="one">
+      <div class="bc">
+        <section class="top">
+          <div class="calc-header flex-center">
+            <h3 class="item-title calc__header-content">calc</h3>
+          </div>
+          <div class="compound-toggle">
+            <p class="item item-label">Theme</p>
+            <p class="item item-1">1</p>
+            <p class="item item-2">2</p>
+            <p class="item item-3">3</p>
+            <div class="wrapper">
+              <div class="toggle_radio">
+                <input type="radio" checked class="toggle_option" id="first_toggle" name="toggle_option">
+                <input type="radio" class="toggle_option" id="second_toggle" name="toggle_option">
+                <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
+                <label for="first_toggle">F</label>
+                <label for="second_toggle">S</label>
+                <label for="third_toggle">T</label>
+                <div class="toggle_option_slider">
+                </div>
               </div>
-            </div>
-        </div>
-      </section>
-  
-      <main class="clac__body calculator">
-        <section class="clac__body-screen" id="screen">
-          <div class="sc">0</div>
-        </section>
-        <section class="clac__body">
-          <div class="error">Please enter a valid number</div>
-          <div class="calc__body-btn">
-            <button class="btn nums-btn" data-key="7" data-type="number">7</button>
-            <button class="btn nums-btn" data-key="8" data-type="number">8</button>
-            <button class="btn nums-btn" data-key="9" data-type="number">9</button>
-            <button class="btn del-btn delete" data-type="delete">DEL</button>
-            <button class="btn nums-btn" data-key="4" data-type="number">4</button>
-            <button class="btn nums-btn" data-key="5" data-type="number">5</button>
-            <button class="btn nums-btn" data-key="6" data-type="number">6</button>
-            <button class="btn symbol-btn" data-key="+" data-type="operator">+</button>
-  
-  
-            <button class="btn nums-btn" data-key="1" data-type="number">1</button>
-            <button class="btn nums-btn" data-key="2" data-type="number">2</button>
-            <button class="btn nums-btn" data-key="3" data-type="number">3</button>
-            <button class="btn symbol-btn" data-key="-" data-type="operator">-</button>
-  
-  
-            <button class="btn nums-btn" data-type="number">.</button>
-            <button class="btn nums-btn" data-key="0" data-type="number">0</button>
-            <button class="btn symbol-btn" data-key="÷" data-type="operator">÷</button>
-            <button class="btn symbol-btn" data-key="×" data-type="operator">×</button>
-  
-            <button class="btn full-width reset-btn" data-type="clear">RESET</button>
-            <button class="btn full-width equel-btn symbol-btn" data-type="equal">=</button>
           </div>
         </section>
-      </main>
-      <footer>
-        <em> &copy; Develped by: Wajd Wael.</em><br>
-        <a class="home-btn-a" href="../../index.html">Home</a>
-      </footer>
+    
+        <main class="clac__body calculator">
+          <section class="clac__body-screen" id="screen">
+            <div class="sc">0</div>
+          </section>
+          <section class="clac__body">
+            <div class="error">Please enter a valid number</div>
+            <div class="calc__body-btn">
+              <button class="btn nums-btn" data-key="7" data-type="number">7</button>
+              <button class="btn nums-btn" data-key="8" data-type="number">8</button>
+              <button class="btn nums-btn" data-key="9" data-type="number">9</button>
+              <button class="btn del-btn delete" data-type="delete">DEL</button>
+              <button class="btn nums-btn" data-key="4" data-type="number">4</button>
+              <button class="btn nums-btn" data-key="5" data-type="number">5</button>
+              <button class="btn nums-btn" data-key="6" data-type="number">6</button>
+              <button class="btn symbol-btn" data-key="+" data-type="operator">+</button>
+    
+    
+              <button class="btn nums-btn" data-key="1" data-type="number">1</button>
+              <button class="btn nums-btn" data-key="2" data-type="number">2</button>
+              <button class="btn nums-btn" data-key="3" data-type="number">3</button>
+              <button class="btn symbol-btn" data-key="-" data-type="operator">-</button>
+    
+    
+              <button class="btn nums-btn" data-type="number">.</button>
+              <button class="btn nums-btn" data-key="0" data-type="number">0</button>
+              <button class="btn symbol-btn" data-key="÷" data-type="operator">÷</button>
+              <button class="btn symbol-btn" data-key="×" data-type="operator">×</button>
+    
+              <button class="btn full-width reset-btn" data-type="clear">RESET</button>
+              <button class="btn full-width equel-btn symbol-btn" data-type="equal">=</button>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <em> &copy; Develped by: Wajd Wael.</em><br>
+          <a class="home-btn-a" href="../../index.html">Home</a>
+        </footer>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
