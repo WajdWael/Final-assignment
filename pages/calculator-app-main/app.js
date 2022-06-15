@@ -15,6 +15,7 @@ document.body.addEventListener("change", function (e) {
     }
 });
 
+
 const calculator = document.querySelector('.calculator')
 const keys = calculator.querySelector('.calc__body-btn')
 const display = calculator.querySelector('.sc')
@@ -28,7 +29,7 @@ keys.addEventListener('click', event => {
     const { type } = key.dataset
     const { previousKeyType } = calculator.dataset
     if (type === 'number') {
-        if (displayValue === '0' || previousKeyType === 'operator') {
+        if (displayValue === '0' || previousKeyType === 'operator' || displayValue === '.') {
             display.textContent = keyValue
         } else {
             display.textContent = displayValue + keyValue
@@ -65,8 +66,8 @@ keys.addEventListener('click', event => {
 
 function calculate(firstNumber, operator, secondNumber) {
     let computation
-    firstNumber = parseFloat(firstNumber)
-    secondNumber = parseFloat(secondNumber)
+    firstNumber = parseFloat(firstNumber).toFixed(7)
+    secondNumber = parseFloat(secondNumber).toFixed(7)
 
     if (isNaN(firstNumber) || isNaN(secondNumber)) {
         document.querySelector('.error').classList.add("show-error")
