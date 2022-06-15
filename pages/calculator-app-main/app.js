@@ -29,7 +29,7 @@ keys.addEventListener('click', event => {
     const { type } = key.dataset
     const { previousKeyType } = calculator.dataset
     if (type === 'number') {
-        if (displayValue === '0' || displayValue == '..' || previousKeyType === 'operator') {
+        if ((displayValue === '0') || (displayValue == '..') || (previousKeyType === 'operator')) {
             display.textContent = keyValue
             return
         } else {
