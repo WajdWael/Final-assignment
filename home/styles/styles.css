@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,700;0,900;1,100;1,900&display=swap');
+
+@import url('./normalize.css');
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --white-color: #fff;
+
+  --biggest-font-size: 4rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /*========== Margenes Bottom ==========*/
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  /*========== transation ==========*/
+  --trans: all 0.4s ease;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 992px) {
+  :root {
+    --biggest-font-size: 2rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/* ==== Normalize ==== */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--white-color);
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  font-size: var(--normal-font-size);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+nav{
+  font-weight: 700;
+  font-family: 'Lobster Two', cursive;
+  font-size: 17px;
+  padding: 1rem;
+  position: relative;
+  z-index: 9999;
+}
+
+/* ===== Main classes ===== */
+.container{
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+      width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space{
+  padding: 7rem 0;
+}
+
+/*=============== BASE ===============*/
+
+.home-bc{
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url('../images/pexels-yelena-odintsova-11256774.jpg');
+}
+
+.home-bc::before {
+  content: '';
+  width: 100%;
+  height: 100vh;
+  background: rgb(0 0 0 / 33%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home-main{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83vh;
+}
+
+.home-main-head{
+  max-width: 662px;
+    width: 90%;
+}
+
+.home-main-head h1 {
+  position: relative;
+  z-index: 19;
+  line-height: .8;
+  color: white;
+  font-size: 131px;
+  margin-bottom: 0;
+}
+
+.home-content{
+  position: relative;
+  color: white;
+  z-index: 567;
+  margin-top: 48px;
+  font-size: 29px;
+}
+
+.home-content em{
+  font-weight: bolder;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #0b96b7;
+}
+
+.home-projects{
+  position: relative;
+  z-index: 9999;
+  color: snow;
+  padding: 1rem 0;
+}
+
+.home-buttons{
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.home-btn{
+  background: #000000de;
+  padding: 13px 29px;
+  font-size: 21px;
+  text-transform: capitalize;
+  box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+  display: flex;
+  border-radius: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.38rem;
+  border: none;
+}
+
+.home-btn-a{
+  color: whitesmoke;
+  font-size: 24px;
+  font-family: 'Lobster Two', cursive;
+}
+
+.fixed-btn{
+  position: fixed;
+    left: 44px;
+}
+.styles{
+  justify-content: start;
+}
+.styles .home-btn {
+  padding: 5px 11px;
+  font-size: 14px;
+}
+@media (max-width: 400px) {
+  .styles .home-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 995px) {
+  .hidden-desktop{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-main-head h1 {
+    font-size: 65px;
+  }
+  .home-main-head p {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 449px) {
+  .home-buttons {
+    flex-direction: column-reverse;
+    align-items: inherit;
+  }
+}

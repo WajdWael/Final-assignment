@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+
+    <div class="container fixed-btn">
+      <div class="flex-center styles">
+        <div class="home-btn">
+          <a class="home-btn-a" href="../../index.html">Home</a>
+        </div>
+      </div>
+    </div>
+      <header class="game__heaer flex-center">
+        <section class="game__heaer-title">
+          <img src="./images/logo.svg" alt="Rock, Paper, Scissors" class="logo">
+        </section>
+        <section class="game__heaer-score">
+          <h3>Score</h3>
+          <p class="score-container">0</p>
+        </section>
+      </header>
+
+      <main class="game__main">
+        <section class="game__body">
+          <button class="game__body-btn-selection" data-selection="paper">
+            <div class="game__body-selection paper">
+              <img src="./images/icon-paper.svg" alt="paper icon">
+            </div>
+          </button>
+
+          <button class="game__body-btn-selection" data-selection="scissors">
+            <div class="game__body-selection scissors">
+              <img src="./images/icon-scissors.svg" alt="scissors icon">
+            </div>
+          </button>
+
+          <button class="game__body-btn-selection" data-selection="rock">
+            <div class="game__body-selection rock">
+              <img src="./images/icon-rock.svg" alt="rock icon">
+            </div>
+          </button>
+        </section>
+        <section class="game__body-btn">
+          <button class="game__body-rulesbtn">Ruels</button>
+        </section>
+
+        <div class="game__body-results flex-center hidden">
+          <section class="section flex-center">
+            <h2 class="game__body-results-headding">you picked</h2>
+            <div class="game__body-results_result"></div>
+          </section>
+          <section class="game__body-results_winner hidden">
+            <h3 class="game__body-results_text"></h3>
+            <button class="play-again">play again</button>
+          </section>
+          <section class="section flex-center">
+            <h2 class="game__body-results-headding">the computer picked</h2>
+            <div class="game__body-results_result"></div>
+          </section>
+        </div>
+      </main>
+
+      <section class="modal">
+        <div class="modal__container">
+          <header class="modal__header">
+            <h2 class="modal__heading">Rules</h2>
+            <button class="close-btn">
+              <img src="./images/icon-close.svg" alt="close button">
+            </button>
+          </header>
+          <img src="./images/image-rules.svg" alt="rules">
+        </div>
+      </section>
+
+      <footer>
+        <em> &copy; Develped by: Wajd Wael.</em><br>
+        <a class="home-btn-a hidden-desktop" href="/index.html">Home</a>
+      </footer>
+    </div>
+  </body>
+</html>

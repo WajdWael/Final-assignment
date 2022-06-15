@@ -1,0 +1,210 @@
+.calc__container[data-theme="one"]{
+    --mainbackground: hsl(222, 26%, 31%);
+    --keypadbackground: hsl(223, 31%, 20%);
+    --screenbackground: hsl(224, 36%, 15%);
+    --keybackgroundRest: hsl(225, 21%, 49%);
+    --keyshadowRest: hsl(224, 28%, 35%);
+    --keyshadowResthover: #A2B3E1;
+    --keybackgroundEquals: hsl(6, 63%, 50%);
+    --keybackgroundEqualsshadow: hsl(6, 70%, 34%);
+    --keybackgroundEqualsshadowhover: #F96C5B;
+    --mainkeybackground: hsl(30, 25%, 89%);
+    --mainkeybackgroundshadow: hsl(28, 16%, 65%);
+    --mainkeybackgroundhover: #fff;
+    --keytext: hsl(221, 14%, 31%);
+    --maintitle: hsl(0, 0, 100%);
+}
+.calc__container[data-theme="two"]{
+    --mainbackground: hsl(0, 0%, 90%);
+    --keypadbackground: hsl(0, 5%, 81%);
+    --screenbackground: hsl(0, 0%, 93%);
+    --keybackgroundRest: hsl(185, 42%, 37%);
+    --keyshadowRest:  hsl(185, 58%, 25%);
+    --keyshadowResthover: #62B5BD;
+    --keybackgroundEquals: hsl(25, 98%, 40%);
+    --keybackgroundEqualsshadow: hsl(25, 99%, 27%);
+    --keybackgroundEqualsshadowhover: #F96C5B;
+    --mainkeybackground:  hsl(45, 7%, 89%);
+    --mainkeybackgroundshadow: hsl(35, 11%, 61%);
+    --mainkeybackgroundhover: #fff;
+    --keytext:  hsl(60, 10%, 19%);
+    --maintitle: hsl(60, 10%, 19%);
+}
+.calc__container[data-theme="three"]{
+    --mainbackground: hsl(268, 75%, 9%);
+    --keypadbackground: hsl(268, 71%, 12%);
+    --screenbackground: hsl(268, 71%, 12%);
+    --keybackgroundRest: hsl(281, 89%, 26%);
+    --keyshadowRest:  hsl(285, 91%, 52%);
+    --keyshadowResthover: #8731B0;
+    --keybackgroundEquals: hsl(176, 100%, 44%);
+    --keybackgroundEqualsshadow: hsl(177, 92%, 70%);
+    --keybackgroundEqualsshadowhover: #94FFF9;
+    --mainkeybackground: hsl(268, 47%, 21%);
+    --mainkeybackgroundshadow: hsl(290, 70%, 36%);
+    --mainkeybackgroundhover: #6B34AC;
+    --keytext:  hsl(52, 100%, 62%);
+    --maintitle: hsl(52, 100%, 62%);
+} 
+
+.bc{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--mainbackground);
+    align-items: center;
+    margin: auto;
+    padding: 2rem 0;
+    flex-direction: column;
+}
+
+.compound-toggle {
+    display: grid;
+    grid-template-columns: 142px 80px 26px 26px 26px;
+    grid-template-rows: 15px 30px;
+}
+
+.item {
+    color: var(--maintitle); 
+    font-size: 0.6rem;
+}
+
+.calc-header .calc__header-content{
+    font-size: 2rem;
+}
+
+.item-label {
+    font-size: 0.5rem;
+    text-align: right;
+    text-transform: uppercase;
+    grid-column: 2 / 3;
+    grid-row: 2 / -1;
+    margin-top: 6px;
+    margin-right: 0.5rem;
+}
+
+.item-1 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    text-align: center;
+}
+
+.item-2 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    text-align: center;
+}
+
+.item-3 {
+    grid-column: 5 / -1;
+    grid-row: 1 / 2;
+    text-align: center;
+}
+
+.item-title {
+    color: var(--maintitle);
+    font-size: 0.8rem;
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+    text-align: left;
+    margin-top: 3px;
+}
+
+.top {
+    max-width: 430px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-end;
+    position: absolute;
+    top: 39px;
+}
+
+/**************Three State Toggle Radio************/
+
+.wrapper {
+    margin: 0 0;
+    grid-column: 3 / -1;
+    grid-row: 2 / -1;
+}
+
+.toggle_radio {
+    position: relative;
+    background: var(--keypadbackground); 
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0;
+    border-radius: 50px;
+    position: relative;
+    height: 26px;
+    width: 78px;
+}
+
+.toggle_radio > * {
+    float: left;
+}
+
+.toggle_radio input[type="radio"] {
+    display: none;
+    /*position: fixed;*/
+}
+
+.toggle_radio label {
+    color: rgba(255, 255, 255, 0); /* alpha 0; invisible */
+    z-index: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 3px 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+}
+
+.toggle_option_slider {
+    background: var(--keybackgroundEquals); 
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+#first_toggle:checked ~ .toggle_option_slider {
+    left: 3px;
+}
+
+#second_toggle:checked ~ .toggle_option_slider {
+    left: 29px;
+}
+
+#third_toggle:checked ~ .toggle_option_slider {
+    left: 55px;
+}
+
+.error{
+    background: #b32a2a;
+    padding: 0rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    padding-left: 0.3rem;
+    border: 1px solid #d26e6e;
+    position: absolute;
+    padding: 0.4rem;
+    top: 40px;
+    border-radius: 4px;
+    width: 50%;
+    transition: opacity .3s ease;
+    opacity: 0;
+    max-width: 446px;
+    width: 90%;
+    z-index: -1;
+}
+.show-error{
+    z-index: 1;
+    opacity: 1;
+}
