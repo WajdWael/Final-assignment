@@ -230,7 +230,7 @@ body{
 }
 
 .game__body-results_text{
-    font-size: 3.5rem;
+    font-size: 50px;
     padding-bottom: var(--mb-1-5);
 }
 .play-again{

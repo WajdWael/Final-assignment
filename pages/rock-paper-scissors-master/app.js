@@ -35,7 +35,7 @@ const RESULTSWINNER = document.querySelector(".game__body-results_winner")
 const RESULTSTEXT = document.querySelector(".game__body-results_text")
 const PLAY_AGAIN_BTN = document.querySelector(".play-again")
 const SCORENUM = document.querySelector(".score-container")
-let score = 1;
+let score = 0;
 
 SELECTIONSBTN.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -80,20 +80,11 @@ function displayWinner(results) {
         if (userWins) {
             RESULTSTEXT.innerHTML = "you win"
             RESULTSCONTAINER[0].classList.toggle('winner-shadow')
-            // if (/score == 0) {
-            //     scoreTracker(1)
-            // } else {
-            //     scoreTracker(1)
-            // }
             scoreTracker(1)
         } else if (computerWins) {
             RESULTSTEXT.innerHTML = "you lose"
             RESULTSCONTAINER[1].classList.toggle('winner-shadow')
-            if (score == 0) {
-                scoreTracker(0)
-            } else {
-                scoreTracker(-1)
-            }
+            scoreTracker(-1)
         } else {
             RESULTSTEXT.innerHTML = "it's a draw"
         }
@@ -109,6 +100,9 @@ function winner(results) {
 }
 
 function scoreTracker(point) {
+    if (score < 0) {
+        SCORENUM.innerHTML = 0
+    }
     score += point;
     SCORENUM.innerHTML = score
 }
